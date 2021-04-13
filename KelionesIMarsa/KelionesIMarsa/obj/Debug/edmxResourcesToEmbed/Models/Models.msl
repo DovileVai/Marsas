@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KelionesIMarsaModelStoreContainer" CdmEntityContainer="KelionesIMarsaEntities">
+    <EntitySetMapping Name="Patiekalas">
+      <EntityTypeMapping TypeName="KelionesIMarsaModel.Patiekala">
+        <MappingFragment StoreEntitySet="Patiekalas">
+          <ScalarProperty Name="Pavadinimas" ColumnName="Pavadinimas" />
+          <ScalarProperty Name="Kalorijos" ColumnName="Kalorijos" />
+          <ScalarProperty Name="Tipas" ColumnName="Tipas" />
+          <ScalarProperty Name="id_Patiekalas" ColumnName="id_Patiekalas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Veiklas">
+      <EntityTypeMapping TypeName="KelionesIMarsaModel.Veikla">
+        <MappingFragment StoreEntitySet="Veikla">
+          <ScalarProperty Name="Tipas" ColumnName="Tipas" />
+          <ScalarProperty Name="Trukme" ColumnName="Trukme" />
+          <ScalarProperty Name="Pavadinimas" ColumnName="Pavadinimas" />
+          <ScalarProperty Name="id_Veikla" ColumnName="id_Veikla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

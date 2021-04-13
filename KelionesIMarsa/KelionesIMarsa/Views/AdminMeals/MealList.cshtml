@@ -1,0 +1,50 @@
+﻿@model IEnumerable<KelionesIMarsa.Models.Patiekala>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Patiekalų sąrašas</h2>
+
+<p>
+    @Html.ActionLink("Sukurti naują patiekalą", "CreateMeal")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pavadinimas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kalorijos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_Patiekalas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pavadinimas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kalorijos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_Patiekalas)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditMeal", new {  id=item.id_Patiekalas  }) |
+            @Html.ActionLink("Delete", "DeleteMeal", new {  id=item.id_Patiekalas  })
+        </td>
+    </tr>
+}
+
+</table>
