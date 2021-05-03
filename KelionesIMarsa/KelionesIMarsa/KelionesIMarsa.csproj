@@ -129,6 +129,7 @@
     <Compile Include="Controllers\AdminActivitiesController.cs" />
     <Compile Include="Controllers\AdminMealsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -146,6 +147,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Models.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Naudotoja.cs">
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Patiekala.cs">
       <DependentUpon>Models.tt</DependentUpon>
@@ -216,6 +220,9 @@
     <Content Include="Views\AdminActivities\CreateActivity.cshtml" />
     <Content Include="Views\AdminActivities\EditActivity.cshtml" />
     <Content Include="Views\AdminActivities\DeleteActivity.cshtml" />
+    <Content Include="Views\Login\AddOrEdit.cshtml" />
+    <Content Include="Views\Home\HomeForAdmin.cshtml" />
+    <Content Include="Views\Home\HomeForTraveler.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

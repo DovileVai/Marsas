@@ -27,5 +27,6 @@ namespace KelionesIMarsa.Models
     
         public DbSet<Patiekala> Patiekalas { get; set; }
         public DbSet<Veikla> Veiklas { get; set; }
+        public DbSet<Naudotoja> Naudotojas { get; set; }
     }
 }

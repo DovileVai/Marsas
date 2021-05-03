@@ -21,5 +21,17 @@
   <EntityContainer Name="KelionesIMarsaEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Patiekalas" EntityType="Self.Patiekala" />
     <EntitySet Name="Veiklas" EntityType="Self.Veikla" />
+    <EntitySet Name="Naudotojas" EntityType="KelionesIMarsaModel.Naudotoja" />
   </EntityContainer>
+  <EntityType Name="Naudotoja">
+    <Key>
+      <PropertyRef Name="id_Naudotojas" />
+    </Key>
+    <Property Name="Vardas" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pavarde" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ElPastas" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Slaptazodis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="id_Naudotojas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArAdminas" Type="Boolean" Nullable="false" />
+  </EntityType>
 </Schema>

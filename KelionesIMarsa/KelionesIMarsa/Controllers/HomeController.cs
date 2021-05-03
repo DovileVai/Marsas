@@ -18,6 +18,16 @@ namespace KelionesIMarsa.Controllers
             return RedirectToAction("MealList", "AdminMeals");
         }
 
+        public ActionResult HomeForAdmin()
+        {
+            return View();
+        }
+
+        public ActionResult HomeForTraveler()
+        {
+            return View();
+        }
+
         public ActionResult ActivitiesList()
         {
             return RedirectToAction("ActivitiesList", "AdminActivities");

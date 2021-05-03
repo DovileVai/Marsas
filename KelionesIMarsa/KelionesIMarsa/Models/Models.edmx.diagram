@@ -7,6 +7,7 @@
       <Diagram DiagramId="070f09f3ccfc46a9bb1a830f7df61a13" Name="Diagram1">
         <EntityTypeShape EntityType="KelionesIMarsaModel.Patiekala" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="KelionesIMarsaModel.Veikla" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KelionesIMarsaModel.Naudotoja" Width="1.5" PointX="0.625" PointY="3.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

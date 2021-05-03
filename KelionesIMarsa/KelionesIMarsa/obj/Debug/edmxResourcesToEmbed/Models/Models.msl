@@ -21,5 +21,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Naudotojas">
+      <EntityTypeMapping TypeName="KelionesIMarsaModel.Naudotoja">
+        <MappingFragment StoreEntitySet="Naudotojas">
+          <ScalarProperty Name="ArAdminas" ColumnName="ArAdminas" />
+          <ScalarProperty Name="id_Naudotojas" ColumnName="id_Naudotojas" />
+          <ScalarProperty Name="Slaptazodis" ColumnName="Slaptazodis" />
+          <ScalarProperty Name="ElPastas" ColumnName="ElPastas" />
+          <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+          <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

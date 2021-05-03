@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="KelionesIMarsaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Naudotojas">
+    <Key>
+      <PropertyRef Name="id_Naudotojas" />
+    </Key>
+    <Property Name="Vardas" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pavarde" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ElPastas" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Slaptazodis" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_Naudotojas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArAdminas" Type="bit" Nullable="false" />
+  </EntityType>
   <EntityType Name="Patiekalas">
     <Key>
       <PropertyRef Name="id_Patiekalas" />
@@ -19,6 +30,7 @@
     <Property Name="id_Veikla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityContainer Name="KelionesIMarsaModelStoreContainer">
+    <EntitySet Name="Naudotojas" EntityType="Self.Naudotojas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Patiekalas" EntityType="Self.Patiekalas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Veikla" EntityType="Self.Veikla" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
