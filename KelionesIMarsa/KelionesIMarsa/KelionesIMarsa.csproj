@@ -128,8 +128,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminActivitiesController.cs" />
     <Compile Include="Controllers\AdminMealsController.cs" />
+    <Compile Include="Controllers\CreateMenuController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\RegisterForJourneyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,6 +226,11 @@
     <Content Include="Views\Login\AddOrEdit.cshtml" />
     <Content Include="Views\Home\HomeForAdmin.cshtml" />
     <Content Include="Views\Home\HomeForTraveler.cshtml" />
+    <Content Include="Views\RegisterForJourney\Journey.cshtml" />
+    <Content Include="Views\RegisterForJourney\RegisterForJourney.cshtml" />
+    <Content Include="Views\CreateMenu\CreateMenu.cshtml" />
+    <Content Include="Views\RegisterForJourney\TimeTableCreate.cshtml" />
+    <Content Include="Views\Payment\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
