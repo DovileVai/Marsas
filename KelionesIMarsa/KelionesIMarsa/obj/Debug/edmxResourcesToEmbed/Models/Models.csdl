@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KelionesIMarsaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Patiekala">
+    <Key>
+      <PropertyRef Name="id_Patiekalas" />
+    </Key>
+    <Property Name="Pavadinimas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Kalorijos" Type="Int32" Nullable="false" />
+    <Property Name="Tipas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_Patiekalas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Veikla">
+    <Key>
+      <PropertyRef Name="id_Veikla" />
+    </Key>
+    <Property Name="Tipas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Trukme" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+    <Property Name="Pavadinimas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_Veikla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="KelionesIMarsaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Patiekalas" EntityType="Self.Patiekala" />
+    <EntitySet Name="Veiklas" EntityType="Self.Veikla" />
+    <EntitySet Name="Naudotojas" EntityType="KelionesIMarsaModel.Naudotoja" />
+  </EntityContainer>
+  <EntityType Name="Naudotoja">
+    <Key>
+      <PropertyRef Name="id_Naudotojas" />
+    </Key>
+    <Property Name="Vardas" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pavarde" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ElPastas" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Slaptazodis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="id_Naudotojas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ArAdminas" Type="Boolean" Nullable="false" />
+  </EntityType>
+</Schema>

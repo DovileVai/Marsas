@@ -1,0 +1,56 @@
+﻿@model KelionesIMarsa.Models.Patiekala
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Šalinimas</h2>
+
+<h3>Ar tikrai norite pašalinti šį patiekalą?</h3>
+<div>
+    <h4>Patiekalas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pavadinimas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pavadinimas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kalorijos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kalorijos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tipas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.id_Patiekalas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id_Patiekalas)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Taip" class="btn btn-default" /> |
+            @Html.ActionLink("Ne", "MealList")
+        </div>
+    }
+</div>

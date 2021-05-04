@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Admin Page";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Peržiūrėti patiekalus</h2>
+        <p>@Html.ActionLink("Patiekalų sąrašas", "MealList", "AdminMeals", null, null)</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Peržiūrėti veiklas</h2>
+        <p>@Html.ActionLink("Veiklų sąrašas", "ActivitiesList", "AdminActivities", null, null)</p>
+    </div>
+</div>

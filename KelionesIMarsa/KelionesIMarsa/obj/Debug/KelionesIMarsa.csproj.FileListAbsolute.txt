@@ -1,0 +1,156 @@
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\KelionesIMarsa.dll.config
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\KelionesIMarsa.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\KelionesIMarsa.pdb
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csc.exe
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csc.exe.config
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csc.rsp
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csi.exe
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csi.exe.config
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csi.rsp
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.AppContext.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Console.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.Compression.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Claims.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.ValueTuple.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\vbc.exe
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\vbc.exe.config
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\vbc.rsp
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\VBCSCompiler.exe
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\Antlr3.Runtime.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\EntityFramework.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\Newtonsoft.Json.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Helpers.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Mvc.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Optimization.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Razor.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.Razor.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\WebGrease.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\EntityFramework.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Helpers.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Mvc.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Optimization.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Razor.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.Razor.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\Newtonsoft.Json.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\Antlr3.Runtime.pdb
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.csprojAssemblyReference.cache
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.csproj.CoreCompileInputs.cache
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.csproj.CopyComplete
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.dll
+C:\Users\Karolis\Desktop\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.pdb
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\KelionesIMarsa.dll.config
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\KelionesIMarsa.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\KelionesIMarsa.pdb
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csc.exe
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csc.exe.config
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csc.rsp
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csi.exe
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csi.exe.config
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\csi.rsp
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.Managed.Core.targets
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.AppContext.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Collections.Immutable.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Console.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.Compression.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.FileSystem.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.Pipes.AccessControl.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.IO.Pipes.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Reflection.Metadata.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.AccessControl.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Claims.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Security.Principal.Windows.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.ValueTuple.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Xml.XmlDocument.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Xml.XPath.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\vbc.exe
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\vbc.exe.config
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\vbc.rsp
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\VBCSCompiler.exe
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\roslyn\VBCSCompiler.exe.config
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\Antlr3.Runtime.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\EntityFramework.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\Microsoft.Web.Infrastructure.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\Newtonsoft.Json.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Helpers.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Mvc.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Optimization.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Razor.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.Deployment.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.Razor.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\WebGrease.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\EntityFramework.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Helpers.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Mvc.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Optimization.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.Razor.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.Deployment.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\System.Web.WebPages.Razor.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\Newtonsoft.Json.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\Antlr3.Runtime.pdb
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.csprojAssemblyReference.cache
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.csproj.CoreCompileInputs.cache
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.csproj.CopyComplete
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.dll
+D:\KTU VI pusmetis\programu sistemu analizes ir projektavimo irankiai\projektas\Marsas\KelionesIMarsa\KelionesIMarsa\obj\Debug\KelionesIMarsa.pdb

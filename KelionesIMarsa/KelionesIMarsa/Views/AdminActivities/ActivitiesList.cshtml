@@ -1,0 +1,50 @@
+﻿@model IEnumerable<KelionesIMarsa.Models.Veikla>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Veiklų sąrašas</h2>
+
+<p>
+    @Html.ActionLink("Sukurti naują veiklą", "CreateActivity")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tipas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Trukme)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pavadinimas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_Veikla)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tipas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trukme)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pavadinimas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_Veikla)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditActivity", new {  id=item.id_Veikla  }) |
+            @Html.ActionLink("Delete", "DeleteActivity", new {  id=item.id_Veikla  })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KelionesIMarsaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Naudotojas">
+          <Key>
+            <PropertyRef Name="id_Naudotojas" />
+          </Key>
+          <Property Name="Vardas" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pavarde" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ElPastas" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Slaptazodis" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_Naudotojas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ArAdminas" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patiekalas">
+          <Key>
+            <PropertyRef Name="id_Patiekalas" />
+          </Key>
+          <Property Name="Pavadinimas" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Kalorijos" Type="int" Nullable="false" />
+          <Property Name="Tipas" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_Patiekalas" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Veikla">
+          <Key>
+            <PropertyRef Name="id_Veikla" />
+          </Key>
+          <Property Name="Tipas" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Trukme" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="Pavadinimas" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_Veikla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="KelionesIMarsaModelStoreContainer">
+          <EntitySet Name="Naudotojas" EntityType="Self.Naudotojas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patiekalas" EntityType="Self.Patiekalas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Veikla" EntityType="Self.Veikla" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KelionesIMarsaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Patiekala">
+          <Key>
+            <PropertyRef Name="id_Patiekalas" />
+          </Key>
+          <Property Name="Pavadinimas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Kalorijos" Type="Int32" Nullable="false" />
+          <Property Name="Tipas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_Patiekalas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Veikla">
+          <Key>
+            <PropertyRef Name="id_Veikla" />
+          </Key>
+          <Property Name="Tipas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Trukme" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="Pavadinimas" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id_Veikla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityContainer Name="KelionesIMarsaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Patiekalas" EntityType="Self.Patiekala" />
+          <EntitySet Name="Veiklas" EntityType="Self.Veikla" />
+          <EntitySet Name="Naudotojas" EntityType="KelionesIMarsaModel.Naudotoja" />
+        </EntityContainer>
+        <EntityType Name="Naudotoja">
+          <Key>
+            <PropertyRef Name="id_Naudotojas" />
+          </Key>
+          <Property Name="Vardas" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Pavarde" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ElPastas" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Slaptazodis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="id_Naudotojas" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ArAdminas" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KelionesIMarsaModelStoreContainer" CdmEntityContainer="KelionesIMarsaEntities">
+          <EntitySetMapping Name="Patiekalas">
+            <EntityTypeMapping TypeName="KelionesIMarsaModel.Patiekala">
+              <MappingFragment StoreEntitySet="Patiekalas">
+                <ScalarProperty Name="Pavadinimas" ColumnName="Pavadinimas" />
+                <ScalarProperty Name="Kalorijos" ColumnName="Kalorijos" />
+                <ScalarProperty Name="Tipas" ColumnName="Tipas" />
+                <ScalarProperty Name="id_Patiekalas" ColumnName="id_Patiekalas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Veiklas">
+            <EntityTypeMapping TypeName="KelionesIMarsaModel.Veikla">
+              <MappingFragment StoreEntitySet="Veikla">
+                <ScalarProperty Name="Tipas" ColumnName="Tipas" />
+                <ScalarProperty Name="Trukme" ColumnName="Trukme" />
+                <ScalarProperty Name="Pavadinimas" ColumnName="Pavadinimas" />
+                <ScalarProperty Name="id_Veikla" ColumnName="id_Veikla" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Naudotojas">
+            <EntityTypeMapping TypeName="KelionesIMarsaModel.Naudotoja">
+              <MappingFragment StoreEntitySet="Naudotojas">
+                <ScalarProperty Name="ArAdminas" ColumnName="ArAdminas" />
+                <ScalarProperty Name="id_Naudotojas" ColumnName="id_Naudotojas" />
+                <ScalarProperty Name="Slaptazodis" ColumnName="Slaptazodis" />
+                <ScalarProperty Name="ElPastas" ColumnName="ElPastas" />
+                <ScalarProperty Name="Pavarde" ColumnName="Pavarde" />
+                <ScalarProperty Name="Vardas" ColumnName="Vardas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
