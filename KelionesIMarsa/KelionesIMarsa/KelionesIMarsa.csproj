@@ -177,7 +177,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Activitiesschedule.cs" />
+    <Compile Include="Models\Activity.cs" />
+    <Compile Include="Models\Activitymode.cs" />
     <Compile Include="Models\Journey.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Meal.cs" />
+    <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Models.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
