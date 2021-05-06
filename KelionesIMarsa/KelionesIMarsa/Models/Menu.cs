@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-
+using System.Web.Mvc;
 
 namespace KelionesIMarsa.Models
 {
@@ -18,11 +18,13 @@ namespace KelionesIMarsa.Models
         [DisplayName("ID")]
         public int id_Menu { get; set; }
 
-        [DisplayName("Patiekalo id")]
+        [DisplayName("Patiekalas")]
         public int fk_Mealid_Meal { get; set; }
 
-        [DisplayName("Užsakymo ID")]
+        [DisplayName("Užsakymas")]
         public int fk_OrderAid_OrderA{ get; set; }
+
+        public IList<SelectListItem> MealList { get; set; }
 
     }
 }
