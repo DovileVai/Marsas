@@ -83,7 +83,6 @@ namespace KelionesIMarsa.Controllers
                 int a = getOrderID();
                 Random rnd = new Random();
                 int id = rnd.Next(0, 99999);
-                //Jei darbuotojo su tabelio nr neranda prideda naują
                 string conn = "datasource=localhost;port=3306;username=root;password=";
                 MySqlConnection mySqlConnection = new MySqlConnection(conn);
                 string sqlquery = @"INSERT INTO marsodb.menu(weekDay,startTime,id_Menu,fk_Mealid_Meal,fk_OrderAid_OrderA)VALUES(?day,?time,?id,?meal,?order);";

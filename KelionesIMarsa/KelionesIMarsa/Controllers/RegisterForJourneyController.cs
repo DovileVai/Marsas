@@ -37,7 +37,6 @@ namespace KelionesIMarsa.Controllers
         }
         public ActionResult RegisterForJourney()
         {
-            //Grazinama darbuotojo kūrimo forma
             Order order = new Order();
             return View(order);
         }
@@ -50,7 +49,6 @@ namespace KelionesIMarsa.Controllers
                 int a = getJourneyID();
                 Random rnd = new Random();
                 int id = rnd.Next(0, 99999);
-                //Jei darbuotojo su tabelio nr neranda prideda naują
                 string conn = "datasource=localhost;port=3306;username=root;password=";
                 MySqlConnection mySqlConnection = new MySqlConnection(conn);
                 string sqlquery = @"INSERT INTO marsodb.ordera(dateOfOrder,id_OrderA,personalCode,phone,payment,fk_Journeyid_Journey)VALUES(?date,?id,?code,?phone,?payment,?fk);";
