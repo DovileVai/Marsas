@@ -33,7 +33,7 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.fk_Mealid_Meal, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @*@Html.EditorFor(model => model.fk_modelis, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @*@Html.EditorFor(model => model.fk_Mealid_Meal, new { htmlAttributes = new { @class = "form-control" } })*@
                     @Html.DropDownListFor(model => model.fk_Mealid_Meal, Model.MealList, "--------------", new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.fk_Mealid_Meal, "", new { @class = "text-danger" })
                 </div>
