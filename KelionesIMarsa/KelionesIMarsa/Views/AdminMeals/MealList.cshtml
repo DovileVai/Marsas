@@ -1,50 +1,55 @@
-﻿@model IEnumerable<KelionesIMarsa.Models.Patiekala>
+﻿@model IEnumerable<KelionesIMarsa.Models.Meal>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Patiekalai";
 }
 
 <h2>Patiekalų sąrašas</h2>
 
 <p>
-    @Html.ActionLink("Sukurti naują patiekalą", "CreateMeal")
+    @Html.ActionLink("Naujas patiekalas", "CreateMeal", new { @class = "btn btn-success" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Pavadinimas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Kalorijos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.id_Patiekalas)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-striped datatable">
+    <thead>
+        <tr style="background-color: lightblue">
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.calories)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_Meal)
+            </th>
+            <th style="width: 18%"></th>
+        </tr>
+    </thead>
+    <tbody>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pavadinimas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kalorijos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_Patiekalas)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditMeal", new {  id=item.id_Patiekalas  }) |
-            @Html.ActionLink("Delete", "DeleteMeal", new {  id=item.id_Patiekalas  })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.calories)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id_Meal)
+                </td>
+                <td>
+                    @Html.ActionLink("Redaguoti", "EditMeal", new { id = item.id_Meal }, new { @class = "btn btn-primary action" })
+                    @Html.ActionLink("Šalinti", "DeleteMeal", new { id = item.id_Meal }, new { @class = "btn btn-danger action" })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>

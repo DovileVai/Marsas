@@ -1,10 +1,10 @@
-﻿@model KelionesIMarsa.Models.Patiekala
+﻿@model KelionesIMarsa.Models.Meal
 
 @{
     ViewBag.Title = "Delete";
 }
 
-<h2>Šalinimas</h2>
+<h2>Patiekalo šalinimas</h2>
 
 <h3>Ar tikrai norite pašalinti šį patiekalą?</h3>
 <div>
@@ -12,45 +12,52 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Pavadinimas)
+            @Html.DisplayNameFor(model => model.type)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Pavadinimas)
+            @Html.DisplayFor(model => model.type)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Kalorijos)
+            @Html.DisplayNameFor(model => model.name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Kalorijos)
+            @Html.DisplayFor(model => model.name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Tipas)
+            @Html.DisplayNameFor(model => model.calories)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Tipas)
+            @Html.DisplayFor(model => model.calories)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.id_Patiekalas)
+            @Html.DisplayNameFor(model => model.id_Meal)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.id_Patiekalas)
+            @Html.DisplayFor(model => model.id_Meal)
         </dd>
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Taip" class="btn btn-default" /> |
-            @Html.ActionLink("Ne", "MealList")
+            @if (ViewBag.naudojama != null)
+            {
+                <h5 style="color:red">@ViewBag.naudojama</h5>
+            }
+            else
+            {
+                <input type="submit" value="Šalinti" class="btn btn-danger" />
+            }
+            @Html.ActionLink("Atgal", "MealList", new { @class = "btn btn-default" })
         </div>
     }
 </div>

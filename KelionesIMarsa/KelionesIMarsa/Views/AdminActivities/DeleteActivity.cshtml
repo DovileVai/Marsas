@@ -4,11 +4,11 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Darbuotojo šalinimas</h2>
+<h2>Veiklos šalinimas</h2>
 
-<h3>Ar tikrai norite pašalinti šį darbuotoją?</h3>
+<h3>Ar tikrai norite pašalinti šią veiklą?</h3>
 <div>
-    <h4>Darbuotojas</h4>
+    <h4>Veikla</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -57,7 +57,7 @@
             {
                 <input type="submit" value="Šalinti" class="btn btn-danger" />
             }
-            @Html.ActionLink("Atgal į sąrašą", "Index", "Darbuotojas", new { @class = "btn btn-default" })
+            @Html.ActionLink("Atgal", "ActivitesList", new { @class = "btn btn-default" })
         </div>
     }
 </div>
