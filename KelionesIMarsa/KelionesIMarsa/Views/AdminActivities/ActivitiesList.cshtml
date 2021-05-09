@@ -1,50 +1,55 @@
-﻿@model IEnumerable<KelionesIMarsa.Models.Veikla>
+﻿@model IEnumerable<KelionesIMarsa.Models.Activity>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Veiklos";
 }
 
 <h2>Veiklų sąrašas</h2>
 
 <p>
-    @Html.ActionLink("Sukurti naują veiklą", "CreateActivity")
+    @Html.ActionLink("Nauja veikla", "CreateActivity", new { @class = "btn btn-success" })
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Trukme)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pavadinimas)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.id_Veikla)
-        </th>
-        <th></th>
-    </tr>
+<table class="table table-striped datatable">
+    <thead>
+        <tr style="background-color: lightblue">
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id_Activity)
+            </th>
+            <th style="width: 18%"></th>
+        </tr>
+    </thead>
+    <tbody>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Trukme)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pavadinimas)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.id_Veikla)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "EditActivity", new {  id=item.id_Veikla  }) |
-            @Html.ActionLink("Delete", "DeleteActivity", new {  id=item.id_Veikla  })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_Activity)
+            </td>
+            <td>
+                @Html.ActionLink("Redaguoti", "EditActivity", new { id = item.id_Activity }, new { @class = "btn btn-primary action" })
+                @Html.ActionLink("Šalinti", "DeleteActivity", new { id = item.id_Activity }, new { @class = "btn btn-danger action" })
+            </td>
+        </tr>
+        }
+    </tbody>
 
 </table>

@@ -1,11 +1,51 @@
-﻿@{
-    ViewBag.Title = "Meniu";
+﻿
+@model KelionesIMarsa.Models.Menu
+
+@{
+    ViewBag.Title = "Naujas automobilis";
 }
 
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>Naujas automobilis</h2>
 
-<p>Sukurkite savo meniu kelionės laikotarpiui</p>
-<div>
-    @Html.ActionLink("Atgal", "RegisterForJourney", "RegisterForJourney")
-</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>Automobilio informacija</legend>
+        <div class="form-horizontal">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.weekDay, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.weekDay, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.weekDay, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.startTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.startTime, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.startTime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.fk_Mealid_Meal, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.fk_Mealid_Meal, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @Html.DropDownListFor(model => model.fk_Mealid_Meal, Model.MealList, "--------------", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.fk_Mealid_Meal, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Išsaugoti" class="btn btn-success" />
+                </div>
+            </div>
+           
+</fieldset>
+    <div>
+        @Html.ActionLink("Atgal", "RegisterForJourney", "RegisterForJourney")
+    </div>
+}
