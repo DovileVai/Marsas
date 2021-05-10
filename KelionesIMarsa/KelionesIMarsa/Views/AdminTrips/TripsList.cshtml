@@ -63,12 +63,9 @@
     for (let i = 0; i < btns.length; i++)
     {
         btns[i].addEventListener('click', (e) => {
-            if (confirm("Ar tikrai norite pašalinti šį įrašą?")) {
-                console.log("paspaude pašalinti")
+            if (!confirm("Ar tikrai norite pašalinti šį įrašą?")) {
+                console.log("paspaudė atšaukti")
                 e.preventDefault();
-            } else
-            {
-                e.preventDefault()
             }
         })
     }

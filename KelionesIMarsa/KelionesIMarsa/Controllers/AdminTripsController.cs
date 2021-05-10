@@ -73,13 +73,12 @@ namespace KelionesIMarsa.Controllers
 
         // POST: AdminTrips/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult EditTrip(Journey journey)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                journey.UpdateTrip(journey);
+                return RedirectToAction("TripsList");
             }
             catch
             {
@@ -88,25 +87,34 @@ namespace KelionesIMarsa.Controllers
         }
 
         // GET: AdminTrips/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult DeleteTrip(int id)
         {
-            return View();
+
+            try {
+                Journey j = new Journey();
+                j.DeleteJourney(id);
+                return RedirectToAction("TripsList");
+            }
+            catch 
+            {
+                return View("TripsList");
+            }
         }
 
         // POST: AdminTrips/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+        //[HttpPost]
+        //public ActionResult Delete(int id, FormCollection collection)
+        //{
+        //    try
+        //    {
+        //        // TODO: Add delete logic here
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }

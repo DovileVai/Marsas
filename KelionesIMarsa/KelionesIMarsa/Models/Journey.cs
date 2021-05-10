@@ -127,6 +127,36 @@ namespace KelionesIMarsa.Models
             conn.Close();
             return status;
         }
+        public string DeleteJourney(int id) 
+        {
+            string status = "Success";
+            MySqlConnection conn = this.GetConnection();
+            string query = @"DELETE FROM marsodb." + this.table + " WHERE id_Journey=?id";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.Parameters.Add("?id", MySqlDbType.Int32).Value = id;
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+            return status;
+        }
+        public string UpdateTrip(Journey data) 
+        {
+            MySqlConnection conn = GetConnection();
+            string query = @"UPDATE marsodb."+this.table+ " SET dateOfJourney=?date, flightDuration=?fdur,duration=?dur," +
+                "numberOfSeats=?num, price=?pr, points=?pts ,fk_Locationid_Location=?loc WHERE id_Journey=?id";
+            MySqlCommand command = new MySqlCommand(query, conn);
+            command.Parameters.Add("?date", MySqlDbType.DateTime).Value = data.dateOfJourney;
+            command.Parameters.Add("?fdur", MySqlDbType.Int32).Value = data.flightDuration;
+            command.Parameters.Add("?dur", MySqlDbType.Int32).Value = data.duration;
+            command.Parameters.Add("?num", MySqlDbType.Int32).Value = data.numberOfSeats;
+            command.Parameters.Add("?pr", MySqlDbType.Double).Value = data.price;
+            command.Parameters.Add("?pts", MySqlDbType.Int32).Value = data.points;
+            command.Parameters.Add("?loc", MySqlDbType.Int32).Value = data.fk_Locationid_Location;
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
+            return "Succesfuly edited";
+        }
 
     }
 }
