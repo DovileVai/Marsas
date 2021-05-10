@@ -152,6 +152,7 @@ namespace KelionesIMarsa.Models
             command.Parameters.Add("?pr", MySqlDbType.Double).Value = data.price;
             command.Parameters.Add("?pts", MySqlDbType.Int32).Value = data.points;
             command.Parameters.Add("?loc", MySqlDbType.Int32).Value = data.fk_Locationid_Location;
+            command.Parameters.Add("?id", MySqlDbType.Int32).Value = data.id_Journey;
             conn.Open();
             command.ExecuteNonQuery();
             conn.Close();
