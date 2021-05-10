@@ -2,10 +2,10 @@
 @model KelionesIMarsa.Models.Menu
 
 @{
-    ViewBag.Title = "Naujas automobilis";
+    ViewBag.Title = "Naujas meniu";
 }
 
-<h2>Naujas automobilis</h2>
+<h2>Naujas meniu</h2>
 
 
 @using (Html.BeginForm())
@@ -13,7 +13,7 @@
     @Html.AntiForgeryToken()
 
     <fieldset>
-        <legend>Automobilio informacija</legend>
+        <legend>Meniu informacija</legend>
         <div class="form-horizontal">
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
