@@ -1,0 +1,75 @@
+﻿@model IEnumerable<KelionesIMarsa.Models.Journey>
+
+@{
+    ViewBag.Title = "Numatomos kelionės";
+}
+
+<h2>Numatomo kelionių sąrašas</h2>
+
+<p>
+    @Html.ActionLink("Nauja kelionė", "CreateTrip", new { @class = "btn btn-success" })
+</p>
+<table class="table table-striped datatable">
+    <thead>
+        <tr style="background-color: lightblue">
+            <th>
+                @Html.DisplayNameFor(m => m.dateOfJourney)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.numberOfSeats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.flightDuration)
+            </th>
+            <th>
+                Veiksmai
+            </th>
+        </tr>
+    </thead>
+
+    @foreach(var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.dateOfJourney.Year/@item.dateOfJourney.Month/@item.dateOfJourney.Day. @item.dateOfJourney.DayOfWeek
+                    </td>
+                    <td>
+                        @item.duration
+                    </td>
+                    <td>
+                        @item.numberOfSeats
+                    </td>
+                    <td>
+                        @Math.Round(@item.price,2) €
+                    </td>
+                    <td>
+                        @item.flightDuration
+                    </td>
+                    <td>
+                        @Html.ActionLink("Redaguoti", "EditTrip", new { id = item.id_Journey }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Šalinti", "DeleteTrip", new { id = item.id_Journey }, new { @class = "btn btn-danger", @id = "deleteBtn" })
+                    </td>
+                </tr>
+            }
+</table>
+<script>
+    let btns = document.querySelectorAll('#deleteBtn');
+    for (let i = 0; i < btns.length; i++)
+    {
+        btns[i].addEventListener('click', (e) => {
+            if (!confirm("Ar tikrai norite pašalinti šį įrašą?")) {
+                console.log("paspaudė atšaukti")
+                e.preventDefault();
+            }
+        })
+    }
+
+
+
+</script>
