@@ -1,4 +1,4 @@
-﻿###################
+###################
 # compiled source #
 ###################
 *.com
@@ -73,3 +73,12 @@ _[Ss]cripts
 *.nupkg
 *.ncrunchsolution
 *.dot[Cc]over
+*.pdb
+*.dll
+*.cache
+*.cache
+KelionesIMarsa/.vs/KelionesIMarsa/v16/.suo
+*.cache
+*.cache
+KelionesIMarsa/.vs/KelionesIMarsa/v16/.suo
+KelionesIMarsa/.vs/KelionesIMarsa/v16/.suo
