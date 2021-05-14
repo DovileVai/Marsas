@@ -18,9 +18,11 @@ namespace KelionesIMarsa.Models
         public DateTime dateOfOrder { get; set; }
 
         [DisplayName("Asmens kodas")]
+        [Required]
         public string personalCode { get; set; }
 
         [DisplayName("Telefonas")]
+        [Required]
         public string phone { get; set; }
 
         [DisplayName("AR sumokėta")]
@@ -52,7 +54,7 @@ namespace KelionesIMarsa.Models
             }
             return a;
         }
-        public void RegisterForJourney(Order order)
+        public void SaveOrder(Order order)
         {
                 DateTime today = DateTime.Today;
                 int a = order.getJourneyID();

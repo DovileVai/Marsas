@@ -27,7 +27,7 @@ namespace KelionesIMarsa.Controllers
         {
             try
             {
-                order.RegisterForJourney(order);
+                order.SaveOrder(order);
                 return View();
             }
             catch

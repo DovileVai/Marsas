@@ -21,6 +21,7 @@ namespace KelionesIMarsa.Models
         public int calories { get; set; }
 
         [DisplayName("Tipas")]
+        [Required]
         public string type { get; set; }
 
         [DisplayName("ID")]
@@ -52,7 +53,7 @@ namespace KelionesIMarsa.Models
             }
             return meals;
         }
-        public void CreateMeal(Meal newMeal)
+        public void Add(Meal newMeal)
         {
                 Random rnd = new Random();
                 int id = rnd.Next(0, 99999);
@@ -106,7 +107,7 @@ namespace KelionesIMarsa.Models
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
         }
-        public void deleteM(int id)
+        public void Remove(int id)
         {
             string conn = "datasource=localhost;port=3306;username=root;password=";
             MySqlConnection mySqlConnection = new MySqlConnection(conn);

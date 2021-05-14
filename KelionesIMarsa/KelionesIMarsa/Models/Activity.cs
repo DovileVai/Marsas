@@ -15,6 +15,7 @@ namespace KelionesIMarsa.Models
     public class Activity
     {
         [DisplayName("Veiklos tipas")]
+        [Required]
         public string type { get; set; }
 
         [DisplayName("Veiklos trukmė")]
@@ -108,7 +109,7 @@ namespace KelionesIMarsa.Models
                 mySqlConnection.Close();
 
         }
-        public void deleteA(int id)
+        public void Remove(int id)
         {
             string conn = "datasource=localhost;port=3306;username=root;password=";
             MySqlConnection mySqlConnection = new MySqlConnection(conn);

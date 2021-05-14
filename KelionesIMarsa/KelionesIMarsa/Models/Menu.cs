@@ -4,20 +4,24 @@ using System.ComponentModel;
 using System.Web.Mvc;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.ComponentModel.DataAnnotations;
 
 namespace KelionesIMarsa.Models
 {
     public class Menu
     {
         [DisplayName("Savaitės diena")]
+        [Required]
         public string weekDay { get; set; }
 
         [DisplayName("Pradžios laikas")]
+        [Required]
         public int startTime { get; set; }
         [DisplayName("ID")]
         public int id_Menu { get; set; }
 
         [DisplayName("Patiekalas")]
+        [Required]
         public int fk_Mealid_Meal { get; set; }
 
         [DisplayName("Užsakymas")]
@@ -70,7 +74,7 @@ namespace KelionesIMarsa.Models
             }
             return meals;
         }
-        public void CreateMenu(Menu menu)
+        public void SaveMenu(Menu menu)
         {
                 int a = menu.getOrderID();
                 Random rnd = new Random();
