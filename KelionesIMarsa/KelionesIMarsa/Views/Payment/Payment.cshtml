@@ -1,10 +1,53 @@
-﻿@{
+﻿@model KelionesIMarsa.Models.Journey
+@{
     ViewBag.Title = "Mokėjimas";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <p>Apmokėkite už kelionę.</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<p>Ar norite naudoti taškus?</p>
+<input id="taip" type="button" value="taip">
+<input id="ne" type="button" value="ne">
+<br>
+<div id="fn" hidden>
+    Iveskite tasku kiekį:
+    <input type="text" />
+    <input id="naujaKaina" type="button" value="Apskaičiuoti">
+</div>
+<br>
+<br>
+<div id="ln" hidden>
+    Suma už kelionę:
+    <p>
+        @Html.DisplayFor(model => model.price)
+    </p>
+    <input id="tipas" type="button" value="Rinktis apmokėjimą">
+</div>
+<br>
+<br>
+<div id="gn" hidden>
+    Suma už kelionę:
+    <p>
+        @Html.DisplayFor(model => model.price)
+    </p>
+    <input id="tipas" type="button" value="Rinktis apmokėjimą">
+</div>
+<br>
+
+<script>
+    $("#taip").click(function () {
+        $("#fn").show();
+    });
+    $("#ne").click(function () {
+        $("#ln").show();
+    });
+    $("#naujaKaina").click(function () {
+        $("#gn").show();
+    });
+
+</script>
 <div>
     @Html.ActionLink("Atgal", "RegisterForJourney", "RegisterForJourney")
 </div>
