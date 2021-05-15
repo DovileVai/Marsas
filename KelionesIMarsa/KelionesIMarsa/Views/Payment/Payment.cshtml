@@ -7,7 +7,7 @@
 
 <p>Apmokėkite už kelionę.</p>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<p>Ar norite naudoti taškus?</p>
+<p id="t">Ar norite naudoti taškus?</p>
 <input id="taip" type="button" value="taip">
 <input id="ne" type="button" value="ne">
 <br>
@@ -39,12 +39,19 @@
 <script>
     $("#taip").click(function () {
         $("#fn").show();
+        $("#taip").hide();
+        $("#ne").hide();
+        $("#t").hide();
     });
     $("#ne").click(function () {
         $("#ln").show();
+        $("#taip").hide();
+        $("#ne").hide();
+        $("#t").hide();
     });
     $("#naujaKaina").click(function () {
         $("#gn").show();
+        $("#fn").hide();
     });
 
 </script>
