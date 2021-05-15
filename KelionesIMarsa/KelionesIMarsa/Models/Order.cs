@@ -1,11 +1,14 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Data;
 using System.Linq;
 using System.Web;
+using System.Configuration;
+using System.Data;
+using System.Web.Mvc;
+using KelionesIMarsa.Models;
+using MySql.Data.MySqlClient;
 
 namespace KelionesIMarsa.Models
 {
@@ -32,9 +35,8 @@ namespace KelionesIMarsa.Models
 
         public int getJourneyID()
         {
-            string connectionstring = "datasource=localhost;port=3306;username=root;password=";
             string mysql = "SELECT id_Journey From marsodb.journey order by RAND() LIMIT 1";
-            MySqlConnection conn = new MySqlConnection(connectionstring);
+            MySqlConnection conn = GetConnection();
             MySqlCommand command = new MySqlCommand(mysql, conn);
             conn.Open();
             MySqlDataAdapter dtb = new MySqlDataAdapter();
@@ -49,26 +51,31 @@ namespace KelionesIMarsa.Models
             }
             return a;
         }
-        public void RegisterForJourney(Order order)
+        public int RegisterForJourney(Order order)
         {
-                DateTime today = DateTime.Today;
-                int a = order.getJourneyID();
-                Random rnd = new Random();
-                int id = rnd.Next(0, 99999);
-                string conn = "datasource=localhost;port=3306;username=root;password=";
-                MySqlConnection mySqlConnection = new MySqlConnection(conn);
-                string sqlquery = @"INSERT INTO marsodb.ordera(dateOfOrder,id_OrderA,personalCode,phone,payment,fk_Journeyid_Journey)VALUES(?date,?id,?code,?phone,?payment,?fk);";
-                MySqlCommand mySqlCommand = new MySqlCommand(sqlquery, mySqlConnection);
-                mySqlCommand.Parameters.Add("?date", MySqlDbType.Date).Value = today;
-                mySqlCommand.Parameters.Add("?id", MySqlDbType.Int32).Value = id;
-                mySqlCommand.Parameters.Add("?code", MySqlDbType.VarChar).Value = order.personalCode;
-                mySqlCommand.Parameters.Add("?phone", MySqlDbType.VarChar).Value = order.phone;
-                mySqlCommand.Parameters.Add("?payment", MySqlDbType.Int32).Value = 0;
-                mySqlCommand.Parameters.Add("?fk", MySqlDbType.Int32).Value = a;
-                mySqlConnection.Open();
-                mySqlCommand.ExecuteNonQuery();
-                mySqlConnection.Close();
-         
+            DateTime today = DateTime.Today;
+            int a = order.getJourneyID();
+            Random rnd = new Random();
+            int id = rnd.Next(0, 99999);
+            MySqlConnection mySqlConnection = GetConnection();
+            string sqlquery = @"INSERT INTO marsodb.ordera(dateOfOrder,id_OrderA,personalCode,phone,payment,fk_Journeyid_Journey)VALUES(?date,?id,?code,?phone,?payment,?fk);";
+            MySqlCommand mySqlCommand = new MySqlCommand(sqlquery, mySqlConnection);
+            mySqlCommand.Parameters.Add("?date", MySqlDbType.Date).Value = today;
+            mySqlCommand.Parameters.Add("?id", MySqlDbType.Int32).Value = id;
+            mySqlCommand.Parameters.Add("?code", MySqlDbType.VarChar).Value = order.personalCode;
+            mySqlCommand.Parameters.Add("?phone", MySqlDbType.VarChar).Value = order.phone;
+            mySqlCommand.Parameters.Add("?payment", MySqlDbType.Int32).Value = 0;
+            mySqlCommand.Parameters.Add("?fk", MySqlDbType.Int32).Value = a;
+            mySqlConnection.Open();
+            mySqlCommand.ExecuteNonQuery();
+            mySqlConnection.Close();
+            return id;
+        }
+        private MySqlConnection GetConnection()
+        {
+            string connectionstring = "datasource=localhost;port=3306;username=root;password=";
+            MySqlConnection conn = new MySqlConnection(connectionstring);
+            return conn;
         }
     }
 }

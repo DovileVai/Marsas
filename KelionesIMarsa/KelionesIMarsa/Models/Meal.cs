@@ -39,7 +39,6 @@ namespace KelionesIMarsa.Models
             DataTable dt = new DataTable();
             dtb.Fill(dt);
             conn.Close();
-            int a = 0;
             foreach (DataRow item in dt.Rows)
             {
                 meals.Add(new Meal

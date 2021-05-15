@@ -49,12 +49,24 @@ namespace KelionesIMarsa.Controllers
 
         // POST: AdminTrips/Create
         [HttpPost]
-        public ActionResult CreateTrip(Journey data)
+        public ActionResult CreateTrip(FormCollection form)
         {
             try
             {
                 Journey journey = new Journey();
-                journey.AddJourney(data);
+                Activitiesschedule actS = new Activitiesschedule();
+                // dateOfJourney,flightDuration,duration,numberOfSeats, price, points,fk_Locationid_Location
+                journey.dateOfJourney = Convert.ToDateTime(form["dateOfJourney"]);
+                journey.flightDuration = Convert.ToInt32(form["flightDuration"]);
+                journey.duration = Convert.ToInt32(form["duration"]);
+                journey.numberOfSeats = Convert.ToInt32(form["numberOfSeats"]);
+                journey.price = Convert.ToDouble(form["price"]);
+                journey.points = Convert.ToInt32(form["points"]);
+                journey.fk_Locationid_Location = Convert.ToInt32(form["fk_Locationid_Location"]);
+                actS.maxWorkTime = Convert.ToInt32(form["maxWorkTime"]);
+                actS.maxRestTime = Convert.ToInt32(form["maxRestHours"]);
+                // validate metodas
+                journey.AddJourney(journey);
                 return RedirectToAction("TripsList");
             }
             catch
