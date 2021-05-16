@@ -14,6 +14,10 @@ namespace KelionesIMarsa.Controllers
 {
     public class PaymentController : Controller
     {
+        public ActionResult Bank()
+        {
+            return View();
+        }
         // GET: Payment
         public ActionResult Payment()
         {

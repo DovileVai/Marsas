@@ -42,7 +42,7 @@
 </div>
 <br>
 <p id="pasirinkti" hidden>Pasirinkite apmokėjimo tipą</p>
-<input id="kortele" type="button" value="kortele" hidden>
+<input id="kortele" type="button" value="Kortele" hidden>
 <input id="grynais" type="button" value="Grynais" hidden>
 
 <script>
@@ -75,6 +75,16 @@
         $("#naujaKaina").hide();
     });
 
+</script>
+<script type="text/javascript">
+    document.getElementById("kortele").onclick = function () {
+        location.href = "@Url.Action("Bank","Payment")";
+    };
+</script>
+<script type="text/javascript">
+    document.getElementById("grynais").onclick = function () {
+        location.href = "@Url.Action("RegisterForJourney", "RegisterForJourney")";
+    };
 </script>
 <div>
     @Html.ActionLink("Atgal", "RegisterForJourney", "RegisterForJourney")

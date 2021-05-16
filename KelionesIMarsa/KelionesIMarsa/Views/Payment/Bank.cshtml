@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Bankas";
+}
+<h2>@ViewBag.Title.</h2>
+
+<h3>Atlikite apmokėjimą.</h3>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<input id="apmoketi" type="button" value="Apmokėti">
+<label id="sekmingas" hidden class ="label-success">Mokėjimas atliktas sėkmingai!</label>
+<input id="grizti" hidden type="button" value="Grįžti į pagrindinį puslapį">
+
+<script>
+    $("#apmoketi").click(function () {
+        $("#sekmingas").show();
+        $("#apmoketi").hide();
+        $("#grizti").show();
+    });
+</script>
+<script type="text/javascript">
+    document.getElementById("grizti").onclick = function () {
+        location.href = "@Url.Action("RegisterForJourney", "RegisterForJourney")";
+    };
+</script>
