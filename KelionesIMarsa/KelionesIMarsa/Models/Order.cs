@@ -35,10 +35,44 @@ namespace KelionesIMarsa.Models
         [DisplayName("keliones ID")]
         public int fk_Journeyid_Journey { get; set; }
 
+        public IList<SelectListItem> JourneyList { get; set; }
+
+        public List<Journey> getJourneyList()
+        {
+            List<Journey> journeys = new List<Journey>();
+            string connectionstring = "datasource=localhost;port=3306;username=root;password=";
+            string mysql = "SELECT * From marsodb.journey";
+            MySqlConnection conn = new MySqlConnection(connectionstring);
+            MySqlCommand command = new MySqlCommand(mysql, conn);
+            conn.Open();
+            MySqlDataAdapter dtb = new MySqlDataAdapter();
+            dtb.SelectCommand = command;
+            DataTable dt = new DataTable();
+            dtb.Fill(dt);
+            conn.Close();
+            int a = 0;
+            foreach (DataRow item in dt.Rows)
+            {
+                journeys.Add(new Journey
+                {
+                    dateOfJourney = Convert.ToDateTime(item["dateOfJourney"]),
+                    duration = Convert.ToInt32(item["duration"]),
+                    numberOfSeats = Convert.ToInt32(item["numberOfSeats"]),
+                    price = Convert.ToInt32(item["price"]),
+                    points = Convert.ToInt32(item["points"]),
+                    flightDuration = Convert.ToInt32(item["flightDuration"]),
+                    id_Journey = Convert.ToInt32(item["id_Journey"]),
+                    fk_Locationid_Location = Convert.ToInt32(item["fk_Locationid_Location"])
+                });
+            }
+            return journeys;
+        }
+
         public int getJourneyID()
         {
             string mysql = "SELECT id_Journey From marsodb.journey order by RAND() LIMIT 1";
-            MySqlConnection conn = GetConnection();
+            string connectionstring = "datasource=localhost;port=3306;username=root;password=";
+            MySqlConnection conn = new MySqlConnection(connectionstring);
             MySqlCommand command = new MySqlCommand(mysql, conn);
             conn.Open();
             MySqlDataAdapter dtb = new MySqlDataAdapter();
@@ -72,8 +106,7 @@ namespace KelionesIMarsa.Models
                 mySqlConnection.Open();
                 mySqlCommand.ExecuteNonQuery();
                 mySqlConnection.Close();
-
-         
+            return id;
         }
     }
 }
