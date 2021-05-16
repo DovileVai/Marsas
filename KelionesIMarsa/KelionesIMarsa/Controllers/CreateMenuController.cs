@@ -36,8 +36,8 @@ namespace KelionesIMarsa.Controllers
             try
             {
                 menu.CreateMenu(menu);
-
-                return View();
+                Fill(menu);
+                return View(menu);
             }
             catch
             {

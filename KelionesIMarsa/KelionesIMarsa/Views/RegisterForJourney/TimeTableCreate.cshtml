@@ -7,5 +7,9 @@
 
 <p>Sukurkite savo veiklų tvarkaraštį kelionės laikotarpiui</p>
 <div>
+    @Html.ActionLink("Sudaryti darbo tvarkaraštį", "openWorkCreation", "TimeTable", null, new { @class = "btn btn-primary", @style = "margin-right: 2rem" })
+    @Html.ActionLink("Sudaryti pramogų tvarkaraštį", "openRestCreation", "TimeTable", null, new { @class = "btn btn-primary", @style = "margin-right: 2rem" })
+    @Html.ActionLink("Sudaryti miego tvarkaraštį", "openSleepCreation", "TimeTable", null, new { @class = "btn btn-primary", @style = "margin-right: 2rem" })
+
     @Html.ActionLink("Atgal", "RegisterForJourney", "RegisterForJourney")
 </div>

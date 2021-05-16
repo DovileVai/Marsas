@@ -4,7 +4,7 @@
     ViewBag.Title = "Numatomos kelionės";
 }
 
-<h2>Numatomo kelionių sąrašas</h2>
+<h2>Numatomų kelionių sąrašas</h2>
 
 <p>
     @Html.ActionLink("Nauja kelionė", "CreateTrip", new { @class = "btn btn-success" })
@@ -23,6 +23,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(m => m.price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.points)
             </th>
             <th>
                 @Html.DisplayNameFor(m => m.flightDuration)
@@ -47,6 +50,9 @@
                     </td>
                     <td>
                         @Math.Round(@item.price,2) €
+                    </td>
+                    <td>
+                        @item.points
                     </td>
                     <td>
                         @item.flightDuration

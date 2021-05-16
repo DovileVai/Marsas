@@ -26,20 +26,19 @@ namespace KelionesIMarsa.Models
         [DisplayName("ID")]
         public int id_Activity { get; set; }
 
+        private string table = "activity";
+
         public List<Activity> ActivitiesList()
         {
             List<Activity> activities = new List<Activity>();
-            string connectionstring = "datasource=localhost;port=3306;username=root;password=";
             string mysql = "SELECT * From marsodb.activity";
-            MySqlConnection conn = new MySqlConnection(connectionstring);
+            MySqlConnection conn = GetConnection();
             MySqlCommand command = new MySqlCommand(mysql, conn);
             conn.Open();
-            MySqlDataAdapter dtb = new MySqlDataAdapter();
-            dtb.SelectCommand = command;
+            MySqlDataAdapter dtb = new MySqlDataAdapter(command);
             DataTable dt = new DataTable();
             dtb.Fill(dt);
             conn.Close();
-            int a = 0;
             foreach (DataRow item in dt.Rows)
             {
                 activities.Add(new Activity
@@ -56,8 +55,7 @@ namespace KelionesIMarsa.Models
         {
                 Random rnd = new Random();
                 int id = rnd.Next(0, 99999);
-                string conn = "datasource=localhost;port=3306;username=root;password=";
-                MySqlConnection mySqlConnection = new MySqlConnection(conn);
+                MySqlConnection mySqlConnection = GetConnection();
                 string sqlquery = @"INSERT INTO marsodb.activity(type,duration,name,id_Activity)VALUES(?t,?d,?n,?id);";
                 MySqlCommand mySqlCommand = new MySqlCommand(sqlquery, mySqlConnection);
                 mySqlCommand.Parameters.Add("?t", MySqlDbType.VarChar).Value = newActivity.type;
@@ -72,8 +70,7 @@ namespace KelionesIMarsa.Models
         public Activity getActivity(int id)
         {
             Activity activity = new Activity();
-            string conn = "datasource=localhost;port=3306;username=root;password=";
-            MySqlConnection mySqlConnection = new MySqlConnection(conn);
+            MySqlConnection mySqlConnection = GetConnection();
             string sqlquery = "select * from marsodb.activity where id_Activity=?id";
             MySqlCommand mySqlCommand = new MySqlCommand(sqlquery, mySqlConnection);
             mySqlCommand.Parameters.Add("?id", MySqlDbType.Int32).Value = id;
@@ -95,23 +92,21 @@ namespace KelionesIMarsa.Models
         }
         public void updateActivity(Activity activity)
         {
-                string conn = "datasource=localhost;port=3306;username=root;password=";
-                MySqlConnection mySqlConnection = new MySqlConnection(conn);
-                string sqlquery = @"UPDATE marsodb.activity a SET a.type=?t, a.duration=?d,a.name=?n WHERE a.id_Activity=?id";
-                MySqlCommand mySqlCommand = new MySqlCommand(sqlquery, mySqlConnection);
-                mySqlCommand.Parameters.Add("?t", MySqlDbType.VarChar).Value = activity.type;
-                mySqlCommand.Parameters.Add("?d", MySqlDbType.VarChar).Value = activity.duration;
-                mySqlCommand.Parameters.Add("?n", MySqlDbType.VarChar).Value = activity.name;
-                mySqlCommand.Parameters.Add("?id", MySqlDbType.VarChar).Value = activity.id_Activity;
-                mySqlConnection.Open();
-                mySqlCommand.ExecuteNonQuery();
-                mySqlConnection.Close();
+            MySqlConnection mySqlConnection = GetConnection();
+            string sqlquery = @"UPDATE marsodb.activity a SET a.type=?t, a.duration=?d,a.name=?n WHERE a.id_Activity=?id";
+            MySqlCommand mySqlCommand = new MySqlCommand(sqlquery, mySqlConnection);
+            mySqlCommand.Parameters.Add("?t", MySqlDbType.VarChar).Value = activity.type;
+            mySqlCommand.Parameters.Add("?d", MySqlDbType.VarChar).Value = activity.duration;
+            mySqlCommand.Parameters.Add("?n", MySqlDbType.VarChar).Value = activity.name;
+            mySqlCommand.Parameters.Add("?id", MySqlDbType.VarChar).Value = activity.id_Activity;
+            mySqlConnection.Open();
+            mySqlCommand.ExecuteNonQuery();
+            mySqlConnection.Close();
 
         }
         public void deleteA(int id)
         {
-            string conn = "datasource=localhost;port=3306;username=root;password=";
-            MySqlConnection mySqlConnection = new MySqlConnection(conn);
+            MySqlConnection mySqlConnection = GetConnection();
             string sqlquery = @"DELETE FROM marsodb.activity where id_Activity=?id";
             MySqlCommand mySqlCommand = new MySqlCommand(sqlquery, mySqlConnection);
             mySqlCommand.Parameters.Add("?id", MySqlDbType.VarChar).Value = id;
@@ -119,8 +114,35 @@ namespace KelionesIMarsa.Models
             mySqlCommand.ExecuteNonQuery();
             mySqlConnection.Close();
         }
-
-
+        private MySqlConnection GetConnection()
+        {
+            string connectionstring = "datasource=localhost;port=3306;username=root;password=";
+            MySqlConnection conn = new MySqlConnection(connectionstring);
+            return conn;
+        }
+        public List<Activity> getAll(string what) {
+            List<Activity> activities = new List<Activity>();
+            MySqlConnection conn = GetConnection();
+            string query = "SELECT * FROM marsodb." + this.table + " WHERE type=?tp";
+            MySqlCommand command = new MySqlCommand(query,conn);
+            command.Parameters.Add("?tp", MySqlDbType.VarChar).Value = what;
+            conn.Open();
+            MySqlDataAdapter dtb = new MySqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            dtb.Fill(dt);
+            conn.Close();
+            foreach (DataRow item in dt.Rows)
+            {
+                activities.Add(new Activity
+                {
+                    type = Convert.ToString(item["type"]),
+                    duration = Convert.ToInt32(item["duration"]),
+                    name = Convert.ToString(item["name"]),
+                    id_Activity = Convert.ToInt32(item["id_Activity"])
+                });
+            }
+            return activities;
+        }
 
 
     }

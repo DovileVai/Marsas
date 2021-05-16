@@ -1,11 +1,13 @@
 ﻿@model KelionesIMarsa.Models.Order
-
 @{
     ViewBag.Title = "Registracija";
 }
 
 <h2>Registracija</h2>
-
+@if (TempData.ContainsKey("message"))
+{
+    <h3 class="bg-success" style="padding:15px 15px 15px 15px">@TempData["message"]</h3>
+}
 
 @using (Html.BeginForm())
 {
@@ -14,6 +16,7 @@
     <fieldset>
         <legend>registracijos informacija</legend>
         <div class="form-horizontal">
+
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.personalCode, htmlAttributes: new { @class = "control-label col-md-2" })

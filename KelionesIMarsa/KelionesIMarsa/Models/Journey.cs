@@ -109,7 +109,7 @@ namespace KelionesIMarsa.Models
 
         public string AddJourney(Journey data) 
         {
-            string status = "Error proccessing request :(";
+            string status = "Success";
             MySqlConnection conn = this.GetConnection();
             string query = @"INSERT INTO marsodb."+this.table+ 
                                                 " (dateOfJourney,flightDuration,duration,numberOfSeats, price, points,fk_Locationid_Location) " +

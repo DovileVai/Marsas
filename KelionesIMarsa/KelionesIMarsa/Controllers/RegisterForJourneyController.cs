@@ -27,7 +27,11 @@ namespace KelionesIMarsa.Controllers
         {
             try
             {
-                order.RegisterForJourney(order);
+                int id = order.RegisterForJourney(order);
+                HttpCookie cookie = new HttpCookie("order_id", id.ToString());
+                cookie.Expires = DateTime.Now.AddMinutes(30);
+                Response.Cookies.Add(cookie);
+                TempData.Add("message", "Jūsų užsakymo informacija buvo išsaugota");
                 return View();
             }
             catch
@@ -37,6 +41,12 @@ namespace KelionesIMarsa.Controllers
         }
         public ActionResult TimeTableCreate()
         {
+            if (!TempData.ContainsKey("back")) 
+            {
+                HttpCookie cookie = Request.Cookies["order_id"];
+                int order_id = Convert.ToInt32(cookie.Value);
+                string status = new Activitiesschedule().CreateSchedule(order_id);
+            }
             return View();
         }
     }

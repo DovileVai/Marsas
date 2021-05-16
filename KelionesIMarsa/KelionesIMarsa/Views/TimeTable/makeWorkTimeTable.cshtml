@@ -1,0 +1,59 @@
+﻿@model IEnumerable<KelionesIMarsa.Models.Activity>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Darbo tvarkaraščio sudarymas";
+
+}
+<h2 class="text-center">Pažymėkite darbus, kuriuos norėtumėte įtraukti į kelionę</h2>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        @if (TempData.ContainsKey("success"))
+        {
+            <p class="bg-info" style="padding: 15px 15px 15px 15px">@TempData["success"].ToString()</p>
+        }
+        @if (TempData.ContainsKey("Error"))
+        {
+            <p class="bg-danger" style="padding: 15px 15px 15px 15px">@TempData["Error"].ToString()</p>
+        }
+        @using (Html.BeginForm())
+        {
+            <table class="table-hover table table-striped text-center">
+                <thead>
+                    <tr style="background-color:burlywood">
+                        <th>
+                            Veiklos pavadinimas
+                        </th>
+                        <th>
+                            Minimali veiklos trukmė
+                        </th>
+                        <th>
+                            Įtraukti?
+                        </th>
+                    </tr>
+                </thead>
+                @Html.AntiForgeryToken()
+                @foreach (var act in Model)
+                {
+                    bool ok = false;
+                    <tr>
+                        <td>@act.name</td>
+                        <td>@act.duration val.</td>
+                        <td>@Html.CheckBox(act.id_Activity.ToString(), ok, new { @class = "form-control" })</td>
+                    </tr>
+                }
+            </table>
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-6 text-center">
+                    @if (TempData.ContainsKey("success"))
+                    {
+                        @Html.ActionLink("Grįžti atgal", "goBackToTimeTables", null, new { @class = "btn btn-primary", @style = "margin-left: 2rem" })
+
+                    }
+                    else
+                    { <input type="submit" value="Išsaugoti" class="btn btn-success" />}
+
+                </div>
+            </div>
+        }
+    </div>
+</div>

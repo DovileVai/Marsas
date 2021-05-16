@@ -12,20 +12,6 @@ namespace KelionesIMarsa.Controllers
     public class AdminTripsController : Controller
     {
 
-        private DataTable ConnectToDb(string table)
-        {
-            string connectionstring = "datasource=localhost;port=3306;username=root;password=";
-            string mysql = "SELECT * From marsodb."+ table;
-            MySqlConnection conn = new MySqlConnection(connectionstring);
-            MySqlCommand command = new MySqlCommand(mysql, conn);
-            conn.Open();
-            MySqlDataAdapter dtb = new MySqlDataAdapter();
-            dtb.SelectCommand = command;
-            DataTable dt = new DataTable();
-            dtb.Fill(dt);
-            conn.Close();
-            return dt;
-        }
         public ActionResult TripsList()
         {
             Journey j = new Journey();
@@ -49,12 +35,21 @@ namespace KelionesIMarsa.Controllers
 
         // POST: AdminTrips/Create
         [HttpPost]
-        public ActionResult CreateTrip(Journey data)
+        public ActionResult CreateTrip(FormCollection form)
         {
             try
             {
                 Journey journey = new Journey();
-                journey.AddJourney(data);
+                // dateOfJourney,flightDuration,duration,numberOfSeats, price, points,fk_Locationid_Location
+                journey.dateOfJourney = Convert.ToDateTime(form["dateOfJourney"]);
+                journey.flightDuration = Convert.ToInt32(form["flightDuration"]);
+                journey.duration = Convert.ToInt32(form["duration"]);
+                journey.numberOfSeats = Convert.ToInt32(form["numberOfSeats"]);
+                journey.price = Convert.ToDouble(form["price"]);
+                journey.points = Convert.ToInt32(form["points"]);
+                journey.fk_Locationid_Location = Convert.ToInt32(form["fk_Locationid_Location"]);
+                // validate metodas
+                journey.AddJourney(journey);
                 return RedirectToAction("TripsList");
             }
             catch
@@ -101,20 +96,5 @@ namespace KelionesIMarsa.Controllers
             }
         }
 
-        // POST: AdminTrips/Delete/5
-        //[HttpPost]
-        //public ActionResult Delete(int id, FormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
-
-        //        return RedirectToAction("Index");
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
     }
 }
