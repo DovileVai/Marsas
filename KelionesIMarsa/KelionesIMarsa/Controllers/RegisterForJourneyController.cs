@@ -41,9 +41,12 @@ namespace KelionesIMarsa.Controllers
         }
         public ActionResult TimeTableCreate()
         {
-            HttpCookie cookie = Request.Cookies["order_id"];
-            int order_id = Convert.ToInt32(cookie.Value);
-            string status = new Activitiesschedule().CreateSchedule(order_id);
+            if (!TempData.ContainsKey("back")) 
+            {
+                HttpCookie cookie = Request.Cookies["order_id"];
+                int order_id = Convert.ToInt32(cookie.Value);
+                string status = new Activitiesschedule().CreateSchedule(order_id);
+            }
             return View();
         }
     }

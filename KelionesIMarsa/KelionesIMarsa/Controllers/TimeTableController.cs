@@ -27,6 +27,12 @@ namespace KelionesIMarsa.Controllers
             return View("makeSleepTimeTable", sleep);
         }
 
+        public ActionResult goBackToTimeTables() 
+        {
+            TempData.Add("back", "Back to Timetables!");
+            return RedirectToAction("TimeTableCreate", "RegisterForJourney");
+        }
+
         private Dictionary<int, int> GetOccupiedTimes(Activitiesschedule OneDaySchedule) 
         {
             Dictionary<int, int> times = new Dictionary<int, int>();
@@ -40,6 +46,13 @@ namespace KelionesIMarsa.Controllers
             return times;
         }
 
+        private bool Validate(List<Activity> form, int boundary = 4) 
+        {
+            if (form.Count >= boundary) {
+                return true;
+            }
+            return false;
+        }
 
         private string AddToSchedule(List<Activity> chosenAct, List<Activitiesschedule> schedule, int minHours) 
         {
@@ -91,15 +104,24 @@ namespace KelionesIMarsa.Controllers
                         chosenAct.Add(new Activity().getActivity(i));
                     }
                 }
-                // užsakymo numeris
-                int order_id = Convert.ToInt32(Request.Cookies["order_id"].Value);
+                if (Validate(chosenAct,1)) 
+                {
+                    // užsakymo numeris
+                    int order_id = Convert.ToInt32(Request.Cookies["order_id"].Value);
 
-                //gaunam 7 dienų tvarkaraščius susijusius su tuo užsakymu
-                List<Activitiesschedule> schedule = new Activitiesschedule().getOrderSchedules(order_id);
-                string status = AddToSchedule(chosenAct, schedule, schedule[0].maxSleepTime);
-                TempData.Add("success", "Miego "+ status);
-                List<Activity> jobs = new Activity().getAll("poilsis");
-                return RedirectToAction("openSleepCreation", jobs);
+                    //gaunam 7 dienų tvarkaraščius susijusius su tuo užsakymu
+                    List<Activitiesschedule> schedule = new Activitiesschedule().getOrderSchedules(order_id);
+                    string status = AddToSchedule(chosenAct, schedule, schedule[0].maxSleepTime);
+                    HttpCookie http = new HttpCookie("back");
+                    http.Value = "back";
+                    http.Expires = DateTime.Now.AddSeconds(5.0);
+                    Response.Cookies.Add(http);
+                    TempData.Add("success", "Miego " + status);
+                    return RedirectToAction("openSleepCreation");
+                }
+                TempData.Add("Error", "Nieko nepasirinkote!");
+                return RedirectToAction("openSleepCreation");
+
             }
             catch(ArgumentOutOfRangeException e)
             {
@@ -113,6 +135,7 @@ namespace KelionesIMarsa.Controllers
         {
             try
             {
+                
                 //Gaunam veiklų pasirinkimus
                 List<Activity> chosenAct = new List<Activity>();
                 for (int i = 1; i < form.Count; i++)
@@ -122,15 +145,23 @@ namespace KelionesIMarsa.Controllers
                         chosenAct.Add(new Activity().getActivity(i));
                     }
                 }
-                // užsakymo numeris
-                int order_id = Convert.ToInt32(Request.Cookies["order_id"].Value);
+                if (Validate(chosenAct))
+                {
+                    // užsakymo numeris
+                    int order_id = Convert.ToInt32(Request.Cookies["order_id"].Value);
 
-                //gaunam 7 dienų tvarkaraščius susijusius su tuo užsakymu
-                List<Activitiesschedule> schedule = new Activitiesschedule().getOrderSchedules(order_id);
-                string status = AddToSchedule(chosenAct, schedule, schedule[0].maxRestTime);
-                TempData.Add("success", "Pramogų " + status);
-                List<Activity> funs = new Activity().getAll("pramoga");
-                return RedirectToAction("openRestCreation", funs);
+                    //gaunam 7 dienų tvarkaraščius susijusius su tuo užsakymu
+                    List<Activitiesschedule> schedule = new Activitiesschedule().getOrderSchedules(order_id);
+                    string status = AddToSchedule(chosenAct, schedule, schedule[0].maxRestTime);
+                    TempData.Add("success", "Pramogų " + status);
+                    HttpCookie http = new HttpCookie("back");
+                    http.Value = "back";
+                    Response.Cookies.Add(http);
+                    return RedirectToAction("openRestCreation");
+                }
+                TempData.Add("Error", "Pasirinkote per mažai pramogų! Pasirinkite bent 4");
+                return RedirectToAction("openRestCreation");
+
             }
             catch
             {
@@ -145,6 +176,7 @@ namespace KelionesIMarsa.Controllers
         {
             try
             {
+                
                 //Gaunam veiklų pasirinkimus
                 List<Activity> chosenAct = new List<Activity>();
                 for (int i = 1; i < form.Count; i++)
@@ -153,15 +185,22 @@ namespace KelionesIMarsa.Controllers
                         chosenAct.Add(new Activity().getActivity(i));
                     }
                 }
-                // užsakymo numeris
-                int order_id = Convert.ToInt32(Request.Cookies["order_id"].Value);
+                if (Validate(chosenAct))
+                {
+                    // užsakymo numeris
+                    int order_id = Convert.ToInt32(Request.Cookies["order_id"].Value);
 
-                //gaunam 7 dienų tvarkaraščius susijusius su tuo užsakymu
-                List<Activitiesschedule> schedule = new Activitiesschedule().getOrderSchedules(order_id);
-                string status = AddToSchedule(chosenAct, schedule, schedule[0].maxWorkTime);
-                TempData.Add("success", "Darbo " + status);
-                List<Activity> jobs = new Activity().getAll("darbas");
-                return RedirectToAction("openWorkCreation", jobs);
+                    //gaunam 7 dienų tvarkaraščius susijusius su tuo užsakymu
+                    List<Activitiesschedule> schedule = new Activitiesschedule().getOrderSchedules(order_id);
+                    string status = AddToSchedule(chosenAct, schedule, schedule[0].maxWorkTime);
+                    TempData.Add("success", "Darbo " + status);
+                    HttpCookie http = new HttpCookie("back");
+                    http.Value = "back";
+                    Response.Cookies.Add(http);
+                    return RedirectToAction("openWorkCreation");
+                }
+                TempData.Add("Error", "Pasirinkote per mažai darbų! Pasirinkite bent 4");
+                return RedirectToAction("openWorkCreation");
             }
             catch (ArgumentOutOfRangeException e)
             {

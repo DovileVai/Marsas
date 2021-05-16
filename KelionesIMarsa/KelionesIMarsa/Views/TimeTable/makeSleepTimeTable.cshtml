@@ -11,6 +11,10 @@
         {
             <p class="bg-info" style="padding: 15px 15px 15px 15px">@TempData["success"].ToString()</p>
         }
+        @if (TempData.ContainsKey("Error"))
+        {
+            <p class="bg-danger" style="padding: 15px 15px 15px 15px">@TempData["Error"].ToString()</p>
+        }
         @using (Html.BeginForm())
         {
             <table class="table-hover table table-striped text-center">
@@ -42,7 +46,8 @@
                 <div class="col-md-offset-3 col-md-6 text-center">
                     @if (TempData.ContainsKey("success"))
                     {
-                        @Html.ActionLink("Baigti tvarkaraščio sudarymą", "TimeTableCreate", "RegisterForJourney", new { @class = "btn btn-primary", @style = "margin-left: 2rem" })
+                        @Html.ActionLink("Grįžti atgal", "goBackToTimeTables", null, new { @class = "btn btn-primary", @style = "margin-left: 2rem" })
+
                     }
                     else
                     { <input type="submit" value="Išsaugoti" class="btn btn-success" />}

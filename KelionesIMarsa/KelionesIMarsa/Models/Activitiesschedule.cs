@@ -72,8 +72,8 @@ namespace KelionesIMarsa.Models
                 MySqlCommand command = new MySqlCommand(query, conn);
                 command.Parameters.Add("?wk", MySqlDbType.Int32).Value = i;
                 command.Parameters.Add("?slp", MySqlDbType.Int32).Value = 8;
-                command.Parameters.Add("?wrk", MySqlDbType.Int32).Value = 8;
-                command.Parameters.Add("?rst", MySqlDbType.Int32).Value = 8;
+                command.Parameters.Add("?wrk", MySqlDbType.Int32).Value = 6;
+                command.Parameters.Add("?rst", MySqlDbType.Int32).Value = 6;
                 command.Parameters.Add("?fk", MySqlDbType.Int32).Value = id;
                 command.ExecuteNonQuery();
             }
