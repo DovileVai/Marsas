@@ -40,7 +40,6 @@ namespace KelionesIMarsa.Controllers
             try
             {
                 Journey journey = new Journey();
-                Activitiesschedule actS = new Activitiesschedule();
                 // dateOfJourney,flightDuration,duration,numberOfSeats, price, points,fk_Locationid_Location
                 journey.dateOfJourney = Convert.ToDateTime(form["dateOfJourney"]);
                 journey.flightDuration = Convert.ToInt32(form["flightDuration"]);
