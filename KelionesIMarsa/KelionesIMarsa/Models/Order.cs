@@ -35,9 +35,8 @@ namespace KelionesIMarsa.Models
 
         public int getJourneyID()
         {
-            string connectionstring = "datasource=localhost;port=3306;username=root;password=";
             string mysql = "SELECT id_Journey From marsodb.journey order by RAND() LIMIT 1";
-            MySqlConnection conn = new MySqlConnection(connectionstring);
+            MySqlConnection conn = GetConnection();
             MySqlCommand command = new MySqlCommand(mysql, conn);
             conn.Open();
             MySqlDataAdapter dtb = new MySqlDataAdapter();
@@ -52,7 +51,7 @@ namespace KelionesIMarsa.Models
             }
             return a;
         }
-        public void RegisterForJourney(Order order)
+        public int RegisterForJourney(Order order)
         {
                 DateTime today = DateTime.Today;
                 int a = order.getJourneyID();
