@@ -95,7 +95,7 @@ namespace KelionesIMarsa.Controllers
             try
             {
                 Activity act = new Activity();
-                act.deleteA(id);
+                act.Remove(id);
                 return RedirectToAction("ActivitiesList");
             }
             catch

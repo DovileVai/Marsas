@@ -33,7 +33,7 @@ namespace KelionesIMarsa.Controllers
         {
             try
             {
-                newMeal.CreateMeal(newMeal);
+                newMeal.Add(newMeal);
 
                 return RedirectToAction("MealList");
             }
@@ -96,7 +96,7 @@ namespace KelionesIMarsa.Controllers
             try
             {
                 Meal meal = new Meal();
-                meal.deleteM(id);
+                meal.Remove(id);
                 return RedirectToAction("MealList");
             }
             catch

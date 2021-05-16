@@ -15,6 +15,7 @@ namespace KelionesIMarsa.Models
     public class Activity
     {
         [DisplayName("Veiklos tipas")]
+        [Required]
         public string type { get; set; }
 
         [DisplayName("Veiklos trukmė")]
@@ -104,7 +105,7 @@ namespace KelionesIMarsa.Models
             mySqlConnection.Close();
 
         }
-        public void deleteA(int id)
+        public void Remove(int id)
         {
             MySqlConnection mySqlConnection = GetConnection();
             string sqlquery = @"DELETE FROM marsodb.activity where id_Activity=?id";

@@ -18,9 +18,11 @@ namespace KelionesIMarsa.Models
         public DateTime dateOfOrder { get; set; }
 
         [DisplayName("Asmens kodas")]
+        [Required]
         public string personalCode { get; set; }
 
         [DisplayName("Telefonas")]
+        [Required]
         public string phone { get; set; }
 
         [DisplayName("AR sumokėta")]

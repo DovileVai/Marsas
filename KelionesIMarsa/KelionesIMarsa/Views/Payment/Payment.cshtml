@@ -1,10 +1,91 @@
-﻿@{
+﻿@model KelionesIMarsa.Models.Journey
+@{
     ViewBag.Title = "Mokėjimas";
 }
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
 <p>Apmokėkite už kelionę.</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<p id="t">Ar norite naudoti taškus?</p>
+<input id="taip" type="button" value="taip">
+<input id="ne" type="button" value="ne">
+
+
+<br>
+<div id="fn" hidden>
+    Iveskite tasku kiekį:
+    <input type="text" />
+    <input id="naujaKaina" type="button" value="Apskaičiuoti">
+</div>
+<br>
+
+
+<br>
+<div id="ln" hidden>
+    Suma už kelionę:
+    <p>
+        @Html.DisplayFor(model => model.price)
+    </p>
+    <input id="tipas" type="button" value="Rinktis apmokėjimą">
+</div>
+<br>
+<br>
+<div id="gn" hidden>
+    Suma už kelionę nuskaičiavus taškus:
+    <p>
+        @Html.DisplayFor(model => model.price)
+    </p>
+    <input id="tipas2" type="button" value="Rinktis apmokėjimą">
+</div>
+<br>
+<p id="pasirinkti" hidden>Pasirinkite apmokėjimo tipą</p>
+<input id="kortele" type="button" value="Kortele" hidden>
+<input id="grynais" type="button" value="Grynais" hidden>
+
+<script>
+    $("#taip").click(function () {
+        $("#fn").show();
+        $("#taip").hide();
+        $("#ne").hide();
+        $("#t").hide();
+    });
+    $("#ne").click(function () {
+        $("#ln").show();
+        $("#taip").hide();
+        $("#ne").hide();
+        $("#t").hide();
+    });
+    $("#naujaKaina").click(function () {
+        $("#gn").show();
+        $("#fn").hide();
+    });
+    $("#tipas2").click(function () {
+        $("#pasirinkti").show();
+        $("#kortele").show();
+        $("#grynais").show();
+        $("#naujaKaina").hide();
+    });
+    $("#tipas").click(function () {
+        $("#pasirinkti").show();
+        $("#kortele").show();
+        $("#grynais").show();
+        $("#naujaKaina").hide();
+    });
+
+</script>
+<script type="text/javascript">
+    document.getElementById("kortele").onclick = function () {
+        location.href = "@Url.Action("Bank","Payment")";
+    };
+</script>
+<script type="text/javascript">
+    document.getElementById("grynais").onclick = function () {
+        location.href = "@Url.Action("RegisterForJourney", "RegisterForJourney")";
+    };
+</script>
 <div>
     @Html.ActionLink("Atgal", "RegisterForJourney", "RegisterForJourney")
 </div>
