@@ -7,7 +7,7 @@
 <h2>Numatomų kelionių sąrašas</h2>
 
 <p>
-    @Html.ActionLink("Nauja kelionė", "CreateTrip", new { @class = "btn btn-success" })
+    @Html.ActionLink("Nauja kelionė", "OpenAddForm", new { @class = "btn btn-success" })
 </p>
 <table class="table table-striped datatable">
     <thead>
@@ -55,10 +55,10 @@
                         @item.points
                     </td>
                     <td>
-                        @item.flightDuration
+                        @item.flightDuration d.
                     </td>
                     <td>
-                        @Html.ActionLink("Redaguoti", "EditTrip", new { id = item.id_Journey }, new { @class = "btn btn-primary" })
+                        @Html.ActionLink("Redaguoti","openEditForm", new { id = item.id_Journey }, new { @class = "btn btn-primary" })
                         @Html.ActionLink("Šalinti", "DeleteTrip", new { id = item.id_Journey }, new { @class = "btn btn-danger", @id = "deleteBtn" })
                     </td>
                 </tr>

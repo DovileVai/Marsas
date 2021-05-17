@@ -29,7 +29,14 @@ namespace KelionesIMarsa.Controllers
 
         public ActionResult goBackToTimeTables() 
         {
-            TempData.Add("back", "Back to Timetables!");
+            if (TempData.ContainsKey("back"))
+            {
+                int last = Convert.ToInt32(TempData["back"].ToString());
+                TempData.Remove("back");
+                TempData.Add("back", last + 1);
+            }
+            else TempData.Add("back", 1);
+
             return RedirectToAction("TimeTableCreate", "RegisterForJourney");
         }
 
@@ -61,7 +68,7 @@ namespace KelionesIMarsa.Controllers
             for (int i = 0; i < schedule.Count; i++)
             {
                 Dictionary<int, int> OneDay = GetOccupiedTimes(schedule[i]);
-                for (int j = 0; j < minHours; j++) //cia maxWorkTime is tiesu turetu buti minimum
+                for (int j = 0; j < minHours; j++) 
                 {
                     int rand = new Random().Next(0, chosenAct.Count);
                     if (rand == last) rand = (rand - 1 >= 0) ? 0 : chosenAct.Count-1;
@@ -72,8 +79,7 @@ namespace KelionesIMarsa.Controllers
                     while (!found)
                     {
                         if (OneDay.ContainsKey(startTime))
-                            // oneday[startTime] grazins idetos veiklos ilgi tuo laiku.
-                            startTime = OneDay[startTime];//priskiriam end time veiklos laika kitos veiklos pradžiai
+                            startTime = OneDay[startTime];
                         else
                             found = true;
                     }
@@ -176,8 +182,6 @@ namespace KelionesIMarsa.Controllers
         {
             try
             {
-                
-                //Gaunam veiklų pasirinkimus
                 List<Activity> chosenAct = new List<Activity>();
                 for (int i = 1; i < form.Count; i++)
                 {
@@ -187,16 +191,10 @@ namespace KelionesIMarsa.Controllers
                 }
                 if (Validate(chosenAct))
                 {
-                    // užsakymo numeris
                     int order_id = Convert.ToInt32(Request.Cookies["order_id"].Value);
-
-                    //gaunam 7 dienų tvarkaraščius susijusius su tuo užsakymu
                     List<Activitiesschedule> schedule = new Activitiesschedule().getOrderSchedules(order_id);
                     string status = AddToSchedule(chosenAct, schedule, schedule[0].maxWorkTime);
                     TempData.Add("success", "Darbo " + status);
-                    HttpCookie http = new HttpCookie("back");
-                    http.Value = "back";
-                    Response.Cookies.Add(http);
                     return RedirectToAction("openWorkCreation");
                 }
                 TempData.Add("Error", "Pasirinkote per mažai darbų! Pasirinkite bent 4");

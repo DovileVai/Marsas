@@ -27,7 +27,7 @@ namespace KelionesIMarsa.Controllers
         {
             try
             {
-                int id = order.RegisterForJourney(order);
+                int id = order.SaveOrder(order);
                 HttpCookie cookie = new HttpCookie("order_id", id.ToString());
                 cookie.Expires = DateTime.Now.AddMinutes(30);
                 Response.Cookies.Add(cookie);

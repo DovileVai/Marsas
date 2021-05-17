@@ -39,7 +39,7 @@ namespace KelionesIMarsa.Models
 
         private string table = "journey";
 
-        public Journey GetJourney(int id)
+        public Journey findTrip(int id)
         {
             Journey journey = new Journey().GetJourneyWhere(id);
             return journey;
@@ -68,7 +68,7 @@ namespace KelionesIMarsa.Models
             }
             return j;
         }
-        public List<Journey> getAllRecords() 
+        public List<Journey> All() 
         {
             List<Journey> journeys = new List<Journey>();
             DataTable dt = getAll();
@@ -127,9 +127,9 @@ namespace KelionesIMarsa.Models
             conn.Close();
             return status;
         }
-        public string DeleteJourney(int id) 
+        public string destroy(int id) 
         {
-            string status = "Success";
+            string status = "Journey Info";
             MySqlConnection conn = this.GetConnection();
             string query = @"DELETE FROM marsodb." + this.table + " WHERE id_Journey=?id";
             MySqlCommand command = new MySqlCommand(query, conn);
@@ -139,7 +139,7 @@ namespace KelionesIMarsa.Models
             conn.Close();
             return status;
         }
-        public string UpdateTrip(Journey data) 
+        public string update(Journey data) 
         {
             MySqlConnection conn = GetConnection();
             string query = @"UPDATE marsodb."+this.table+ " SET dateOfJourney=?date, flightDuration=?fdur,duration=?dur," +

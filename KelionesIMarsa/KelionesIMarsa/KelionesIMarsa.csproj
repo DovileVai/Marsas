@@ -175,6 +175,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\RegisterForJourneyController.cs" />
+    <Compile Include="Controllers\TimeTableController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -210,6 +211,7 @@
     <Compile Include="Models\Veikla.cs">
       <DependentUpon>Models.tt</DependentUpon>
     </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.6.1.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -474,10 +476,13 @@
     <Content Include="Views\CreateMenu\CreateMenu.cshtml" />
     <Content Include="Views\RegisterForJourney\TimeTableCreate.cshtml" />
     <Content Include="Views\Payment\Payment.cshtml" />
-    <Content Include="Views\AdminTrips\CreateTrip.cshtml" />
-    <Content Include="Views\AdminTrips\EditTrip.cshtml" />
-    <Content Include="Views\AdminTrips\TripsList.cshtml" />
+    <Content Include="Views\AdminTrips\AddNewTripForm.cshtml" />
+    <Content Include="Views\AdminTrips\editTripForm.cshtml" />
+    <Content Include="Views\AdminTrips\AdminTripsList.cshtml" />
     <Content Include="Views\Payment\Bank.cshtml" />
+    <Content Include="Views\TimeTable\makeRestTimeTable.cshtml" />
+    <Content Include="Views\TimeTable\makeSleepTimeTable.cshtml" />
+    <Content Include="Views\TimeTable\makeWorkTimeTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
