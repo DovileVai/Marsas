@@ -16,6 +16,7 @@ namespace KelionesIMarsa.Controllers
     {
         public ActionResult Bank()
         {
+            SetPayed();
             return View();
         }
         // GET: Payment
@@ -79,5 +80,20 @@ namespace KelionesIMarsa.Controllers
             return View();
         }
 
+        public void SetPayed()
+        {
+            HttpCookie cookie = Request.Cookies["order_id"];
+            int order_id = Convert.ToInt32(cookie.Value);
+            string conn = "datasource=localhost;port=3306;username=root;password=";
+            MySqlConnection mySqlConnection = new MySqlConnection(conn);
+            string sqlquery = @"UPDATE marsodb.ordera a SET a.payment=?t WHERE a.id_OrderA=?id";
+            MySqlCommand mySqlCommand = new MySqlCommand(sqlquery, mySqlConnection);
+            mySqlCommand.Parameters.Add("?t", MySqlDbType.Int32).Value = 1;
+            mySqlCommand.Parameters.Add("?id", MySqlDbType.Int32).Value = order_id;
+            mySqlConnection.Open();
+            //MySqlDataAdapter mda = new MySqlDataAdapter(mySqlCommand);
+            mySqlCommand.ExecuteNonQuery();
+            mySqlConnection.Close();
+        }
     }
 }

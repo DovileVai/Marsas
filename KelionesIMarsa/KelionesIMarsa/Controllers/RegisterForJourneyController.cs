@@ -12,7 +12,7 @@ namespace KelionesIMarsa.Controllers
 {
     public class RegisterForJourneyController : Controller
     {
-       
+
         public ActionResult Journey()
         {
             return View();
