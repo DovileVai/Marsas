@@ -37,6 +37,7 @@ namespace KelionesIMarsa.Controllers
             {
                 menu.SaveMenu(menu);
                 Fill(menu);
+                TempData.Add("message", "Jūsų meniu informacija buvo išsaugota");
                 return View(menu);
             }
             catch
